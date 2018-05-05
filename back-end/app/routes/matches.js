@@ -29,7 +29,6 @@ module.exports = function(app, db) {
       const match = req.body;
       const groupName=match["group"];
       console.log(groupName);
-      let group;
       db.collection('groups').findOne({'name': groupName})
             .then(function(doc) {
                 if(!doc)
