@@ -1,0 +1,39 @@
+<h1>Admin Panel - Matches</h1>
+<label>Group :</label>
+<select class='select-option-group' required [(ngModel)]='selectedGroup' (ngModelChange)='onGroupSelected($event)'>
+  <option class='option' *ngFor='let group of groups' [ngValue]='group'>{{group.name}}</option>
+</select>
+<br>
+<br>
+<br>
+<label>Team 1: </label>
+<select class='select-option-team' [disabled]="!teams" required [(ngModel)]='team1' (ngModelChange)='onTeamSelected($event)'>
+  <option class='option' *ngFor='let team of teams' [ngValue]="team">{{team.name}}</option>
+</select>
+<br>
+<br>
+<label>Team 2: </label>
+<select class='select-option-team' [disabled]="!teams" required [(ngModel)]='team2' (ngModelChange)='onTeamSelected($event)'>
+  <option class='option' *ngFor='let team of teams' [ngValue]="team">{{team.name}}</option>
+</select>
+<br>
+<br>
+<label>Order: </label>
+<input [(ngModel)]='order'>
+<br>
+<br>
+<label>Pitch:  </label>
+<select class='select-option-team' [disabled]="!teams" required [(ngModel)]='selectedPitch' (ngModelChange)='onTeamSelected($event)'>
+  <option class='option' *ngFor='let pitch of pitches' [ngValue]="pitch">{{pitch}}</option>
+</select>
+<br>
+<br>
+<label>Time: </label>
+<input [(ngModel)]='time'>
+<br>
+<br>
+<button (click)="onSave()">Save</button>
+{{respose|json}}
+
+
+

@@ -1,0 +1,35 @@
+<h1>
+  {{group.name}}
+</h1>
+
+
+
+<div>
+    <table id="result">
+      <!-- <caption class="tabletitle">{{group}}</caption> -->
+      <tr id="firstrow">
+        <td>Rank</td>
+        <td>Team</td>
+        <td>Played</td>
+        <td>Win</td>
+        <td>Draw</td>
+        <td>Loss</td>
+        <td>G Con</td>
+        <td>G Score</td>
+        <td>G Diff</td>
+        <td>Pts</td>
+      </tr>
+      <tr *ngFor="let result of group.teams; let i=index">
+        <td>{{ i+1}}</td>
+        <td>{{result.name}}</td>
+        <td>{{result.played}}</td>
+        <td>{{result.win}}</td>
+        <td>{{result.draw}}</td>
+        <td>{{result.loss}}</td>
+        <td>{{result.gcon}}</td>
+        <td>{{result.gscored}}</td>
+        <td>{{result.gdif}}</td>
+        <td>{{result.pts}}</td>
+      </tr>
+    </table>
+

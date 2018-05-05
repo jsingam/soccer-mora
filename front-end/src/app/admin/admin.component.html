@@ -1,0 +1,31 @@
+
+<h1>Admin Panel - Results</h1>
+<label>Group :</label>
+<select class='select-option-group' required [(ngModel)]='selectedGroup' (ngModelChange)='onGroupSelected($event)'>
+  <option class='option' *ngFor='let group of groups' [ngValue]="group">{{group}}</option>
+</select>
+<br>
+<br>
+<br>
+<label>Match :</label>
+<select class='select-option-group' required [(ngModel)]='selectedMatch' (ngModelChange)='onMatchSelected($event)'>
+  <option class='option' *ngFor='let match of matches' [ngValue]="match">{{match.team1}}-{{match.team2}}</option>
+</select>
+<br>
+<br>
+<label>Team 1 :</label>
+<label>{{team1}}</label>
+<br>
+<label>Score: </label>
+<input type='number' [(ngModel)]='score1'>
+<br>
+<br>
+<label>Team 2 :</label>
+<label>{{team2}}</label>
+<br>
+<label>Score: </label>
+<input type='number' [(ngModel)]='score2'>
+<br>
+<button (click)='onSave()'>Save</button>
+
+
